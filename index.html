@@ -119,16 +119,16 @@
             const result = document.getElementById("result");
             const plot = document.getElementById("plot");
 
-            if (userAnswer.trim() === "") {
+            if (userAnswer.trim() == "") {
                 result.textContent = "โปรดกรอกคำตอบ!";
                 result.className = "wrong";
                 plot.style.display = "none";
             } else if (userAnswer === "I Miss You") {
-                result.innerHTML += "<span style='font-size: 15px;'> เก่งมากๆเลยค้าบ! คนน่ารัก ผมก็อยากจะบอกว่า I Miss You Too</span>";
-
+                result.textContent = ""; // Clear previous text
+                result.innerHTML += "เก่งมากๆเลยค้าบ! คนน่ารัก ผมก็อยากจะบอกว่า I Miss You Too<br>";
                 result.className = "correct";
                 plot.style.display = "block";
-                result.innerHTML += "<br><span style='font-size: 18px;'> นี่คือคำตอบของ (x^2 + y^2 - 1)^3 - x^2y^3 = 0 ที่แปลว่า I Miss You</span>"; // เพิ่มข้อความ
+                result.innerHTML += "นี่คือคำตอบของ (x^2 + y^2 - 1)^3 - x^2y^3 = 0 ที่แปลว่า I Miss You";
                 plotHeartCurve();
             } else {
                 result.textContent = "ผิด! โปรดลองใหม่อีกครั้ง";
@@ -136,8 +136,6 @@
                 plot.style.display = "none";
             }
         }
-
-
 
         function plotHeartCurve() {
             const x = [];
