@@ -123,7 +123,7 @@
                 result.textContent = "โปรดกรอกคำตอบ!";
                 result.className = "wrong";
                 plot.style.display = "none";
-            } else if (userAnswer === "I Miss You", "I Miss You ") {
+            } else if (userAnswer === "I Miss You" || userAnswer === "I Miss You ") {
                 result.textContent = "";
                 result.innerHTML += "เก่งมากๆเลยค้าบ! คนน่ารัก ผมก็อยากจะบอกว่า I Miss You Too<br>";
                 result.className = "correct";
@@ -136,7 +136,6 @@
                 plot.style.display = "none";
             }
         }
-
         function plotHeartCurve() {
             const x = [];
             const y = [];
